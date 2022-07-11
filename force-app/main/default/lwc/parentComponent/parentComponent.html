@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Lightning web components - Events">
+        <div class="slds-m-around_medium">
+            <lightning-input class="slds-var-m-bottom_xx-small"
+            label="Enter text"
+            type="text"
+            name="input1"
+            ></lightning-input>
+        </div>
+        <lightning-button variant="Neutral" label="Add"
+        onclick={addInputToList}
+        ></lightning-button>
+        <template if:true={selected}>
+            <lightning-card class="slds-m-around_medium">
+                <div class="slds-text-heading_large">
+                    <p>You have selected: {name}</p>
+                </div>
+            </lightning-card>  
+        </template>
+    </lightning-card>
+    
+    <lightning-card title="List of items">
+        <div class="slds-m-around_medium">
+            <template for:each={list} for:item="inputItem"> 
+                <div key={inputItem.id} class="slds-has-dividers_around-space">
+                    <c-child-component input-item={inputItem}></c-child-component>
+                </div>
+           </template>
+           
+        </div>
+    </lightning-card>
+</template>
