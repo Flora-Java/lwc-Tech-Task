@@ -7,27 +7,27 @@
             name="input1"
             ></lightning-input>
         </div>
-        <lightning-button variant="Neutral" label="Add"
-        onclick={addInputToList}
-        ></lightning-button>
-        
+        <div class="slds-m-around_medium"> 
+            <lightning-button variant="Neutral" label="Add"
+            onclick={addInputToList}
+            ></lightning-button>
+        </div>   
     </lightning-card>
     
     <lightning-card title="List of items">
         <div class="slds-m-around_medium">
             <template for:each={list} for:item="inputItem"> 
                 <div key={inputItem.id} class="slds-has-dividers_around-space">
-                    <c-child-component input-item={inputItem} oninputitemselect={handleSelect}></c-child-component>
-                    
+                    <c-child-component input-item={inputItem} oninputitemselect={handleSelect}></c-child-component>   
                 </div>
            </template>
            <template if:true={selected}>
-            <lightning-card>
-                <div class="slds-text-heading_large">
-                    <p>You have selected: {searchValue}</p>
-                </div>
-            </lightning-card>
-        </template> 
+                <lightning-card>
+                    <div class="slds-text-heading_large">
+                        <p>You have selected: {searchValue}</p>
+                    </div>
+                </lightning-card>
+            </template> 
         </div>
     </lightning-card>
 </template>
