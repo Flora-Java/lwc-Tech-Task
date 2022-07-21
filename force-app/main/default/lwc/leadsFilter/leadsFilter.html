@@ -1,0 +1,74 @@
+<template>
+    <lightning-card title="LWC Imperative Tech Task with datatable">
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="All" 
+            onclick={handleAllClick}>
+            </lightning-button>
+        </div>
+        <template if:true={leads}>
+            <div style="height: 300px">
+                <lightning-datatable 
+                key-field="Id"
+                data={leads}
+                columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Open - Not Contacted" 
+            onclick={handleOpenNotContactedClick}>
+            </lightning-button>
+        </div>
+            <template if:true={leadnotcontacted}>
+                <div style="height: 200px">
+                    <lightning-datatable 
+                    key-field="Id"
+                    data={leadnotcontacted}
+                    columns={columns}>
+                    </lightning-datatable>
+                </div>
+            </template>
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Working - Contacted" 
+            onclick={handleWorkingContactedClick}>
+            </lightning-button>
+        </div>
+        <template if:true={leadsworkingcontacted}>
+            <div style="height: 300px">
+                <lightning-datatable 
+                key-field="Id"
+                data={leadsworkingcontacted}
+                columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Closed - Converted" 
+            onclick={handleClosedConvertedClick}>
+            </lightning-button>
+        </div>
+        <template if:true={leadsclosedConv}>
+            <div style="height: 200px">
+                <lightning-datatable 
+                key-field="Id"
+                data={leadsclosedConv}
+                columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Closed - Not Converted" 
+            onclick={handleClosedNotConvertedClick}>
+            </lightning-button>
+        </div>
+        <template if:true={leadsClosedNotConv}>
+            <div style="height: 200px">
+                <lightning-datatable 
+                key-field="Id"
+                data={leadsClosedNotConv}
+                columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+    </lightning-card>
+</template>
